@@ -2,6 +2,8 @@
 import sys
 input=sys.stdin.readline
 
+.rstrip("\n")
+
 =map(int,input().split())
 
 from math import factorial as fac

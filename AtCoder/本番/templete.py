@@ -41,7 +41,7 @@ def power(x, y):
     elif y % 2 == 0 : return power(x, y/2)**2 % mod
     else            : return power(x, y//2)**2 * x % mod
 def div(a, b):
-    return mul(a, power(b, mod-2))
+    return mul(a, power(b, mod-2)) % mod
 
 
 #累乗 二分累乗法　power(x,y) x**y
@@ -65,12 +65,20 @@ g1 = [1, 1] # 元テーブル
 g2 = [1, 1] #逆元テーブル
 inverse = [0, 1] #逆元テーブル計算用テーブル
 
-for i in range( 2, N + 1 ):
+for i in range( 2, n + 1 ):
     g1.append( ( g1[-1] * i ) % mod )
     inverse.append( ( -inverse[mod % i] * (mod//i) ) % mod )
     g2.append( (g2[-1] * inverse[-1]) % mod )
 
 a = cmb(n,r,mod)
+
+#nが非常に大きくrがちいさいときはこっち
+# div
+def cmb(n,r):
+    res=1
+    for i in range(1,r+1):
+        res=res*div(n-i+1,i)%mod
+    return res%mod
 
 
 #queue

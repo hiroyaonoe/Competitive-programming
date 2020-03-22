@@ -32,7 +32,7 @@ import sys
 sys.setrecursionlimit(2000000)
 
 
-#最小公倍数
+#最小公倍数 a is a list
 from fractions import gcd
 def lcm(a):
     x = a[0]

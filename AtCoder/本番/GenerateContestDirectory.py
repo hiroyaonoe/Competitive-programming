@@ -1,14 +1,16 @@
 import os
 import sys
 
-type=int(input("ABC:0 AGC:1 Other:2 ->"))
+dir=""
+while dir=="":
+    type=int(input("ABC:0 AGC:1 Other:2 ->"))
 
-if type==0:dir="ABC"
-elif type==1:dir="AGC"
-elif type==2:dir="others"
-else:
-    print("Please input 0 or 1 or 2.")
-    sys.exit()
+    if type==0:dir="ABC"
+    elif type==1:dir="AGC"
+    elif type==2:dir="others"
+    else:
+        print("Please input 0 or 1 or 2.")
+
 
 name=input("Contest name is ")
 num=int(input("The number of probrems is "))

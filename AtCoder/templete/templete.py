@@ -32,6 +32,13 @@ from itertools import combinations as cmb
 # 重複を許す場合
 from itertools import combinations_with_replacement as cmb
 
+# list.countを全要素に実施し、dictのラッパーCounterクラスで返す
+# l = ['a', 'a', 'a', 'a', 'b', 'c', 'c']
+# cnt(l)
+# => Counter({'a': 4, 'c': 2, 'b': 1})
+import collections import Counter as cnt
+
+
 
 #再帰制限UP
 import sys

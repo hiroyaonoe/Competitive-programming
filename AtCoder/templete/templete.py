@@ -36,7 +36,7 @@ from itertools import combinations_with_replacement as cmb
 # l = ['a', 'a', 'a', 'a', 'b', 'c', 'c']
 # cnt(l)
 # => Counter({'a': 4, 'c': 2, 'b': 1})
-import collections import Counter as cnt
+from collections import Counter as cnt
 
 
 

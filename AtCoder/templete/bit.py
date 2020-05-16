@@ -7,3 +7,14 @@ def cntbin(num):
     for i in bin_num:
             count += int(i)
     return count
+
+
+# n進数
+# n進数のstr型の変数Xを10進数の数字(int型)にして返す．
+int(X,n)
+
+# 10進数からn進数へ(n<=10)
+def Base_10_to_n(X, n):
+    if (int(X/n)):
+        return Base_10_to_n(int(X/n), n)+str(X%n)
+    return str(X%n)

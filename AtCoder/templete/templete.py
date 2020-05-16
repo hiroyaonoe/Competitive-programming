@@ -5,7 +5,7 @@ input=sys.stdin.readline
 .rstrip("\n")
 
 
-=map(int,input().split())
+=list(map(int,input().split()))
 
 # 切り捨て
 4 // 3
@@ -46,7 +46,7 @@ sys.setrecursionlimit(2000000)
 
 
 #最小公倍数 a is a list
-from fractions import gcd
+from math import gcd
 def lcm(a):
     x = a[0]
     for i in range(1, len(a)):
@@ -84,13 +84,11 @@ def cmb(n, r,mod):
         return 0
     r = min(r, n-r)
     return g1[n] * g2[r] * g2[n-r] % mod
-
 mod = 10**9+7 #出力の制限
 N = 10**4
 g1 = [1, 1] # 元テーブル
 g2 = [1, 1] #逆元テーブル
 inverse = [0, 1] #逆元テーブル計算用テーブル
-
 for i in range( 2, n + 1 ):
     g1.append( ( g1[-1] * i ) % mod )
     inverse.append( ( -inverse[mod % i] * (mod//i) ) % mod )
@@ -117,3 +115,21 @@ L.append(5)#[1,2,3,4,5]
 L.pop()#[1,2,3,4]
 #dequeue
 L.popleft()#[2,3,4]
+
+
+#初期化を関数によって行うdict
+# aaa = defaultdict(int|list|lambda ...)
+from collections import defaultdict
+
+
+# 約数を列挙 Order(sqrt(n))
+def make_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divisors.append(i)
+            if i != n // i:
+                divisors.append(n//i)
+
+    # divisors.sort()
+    return divisors

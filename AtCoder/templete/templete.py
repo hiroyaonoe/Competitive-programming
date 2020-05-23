@@ -23,14 +23,20 @@ nl = lambda: list(map(int, stdin.readline().split()))
 
 
 
-
+# 階乗
 from math import factorial as fac
 
-
+# combination
 from itertools import combinations as cmb
 
 # 重複を許す場合
 from itertools import combinations_with_replacement as cmb
+
+# 順列組み合わせ
+from itertools import permutations as per
+per(list,[int])
+# len(list) P int
+#len(list) P len(list)
 
 # list.countを全要素に実施し、dictのラッパーCounterクラスで返す
 # l = ['a', 'a', 'a', 'a', 'b', 'c', 'c']

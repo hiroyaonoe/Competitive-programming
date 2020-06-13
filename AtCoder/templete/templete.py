@@ -34,9 +34,10 @@ from itertools import combinations_with_replacement as cmb
 
 # 順列組み合わせ
 from itertools import permutations as per
-per(list,[int])
+per(list,int)
 # len(list) P int
-#len(list) P len(list)
+per(list)
+#len(list) P len(list) (intなしの場合)
 
 # list.countを全要素に実施し、dictのラッパーCounterクラスで返す
 # l = ['a', 'a', 'a', 'a', 'b', 'c', 'c']
@@ -128,14 +129,3 @@ L.popleft()#[2,3,4]
 from collections import defaultdict
 
 
-# 約数を列挙 Order(sqrt(n))
-def make_divisors(n):
-    divisors = []
-    for i in range(1, int(n**0.5)+1):
-        if n % i == 0:
-            divisors.append(i)
-            if i != n // i:
-                divisors.append(n//i)
-
-    # divisors.sort()
-    return divisors

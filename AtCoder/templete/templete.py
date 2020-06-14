@@ -118,11 +118,15 @@ from collections import deque
 L=deque([1,2,3,4])
 #push,enqueue
 L.append(5)#[1,2,3,4,5]
+L.appendleft()
 #pop
 L.pop()#[1,2,3,4]
 #dequeue
 L.popleft()#[2,3,4]
 
+# queueでスライスする
+itertools.islice(iterable, stop)
+itertools.islice(iterable, start, stop[, step])
 
 #初期化を関数によって行うdict
 # aaa = defaultdict(int|list|lambda ...)

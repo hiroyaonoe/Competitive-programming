@@ -68,31 +68,23 @@ mod = 1000000007
 
 def mul(a, b):
     return ((a % mod) * (b % mod)) % mod
-def power(x, y):
-    if   y == 0     : return 1
-    elif y == 1     : return x % mod
-    elif y % 2 == 0 : return power(x, y/2)**2 % mod
-    else            : return power(x, y//2)**2 * x % mod
+
 def div(a, b):
-    return mul(a, power(b, mod-2)) % mod
+    return mul(a, pow(b, mod-2,mod)) % mod
 
 
 #累乗 二分累乗法　power(x,y) x**y
-def power(x, y):
-    if   y == 0     : return 1
-    elif y == 1     : return x % mod
-    elif y % 2 == 0 : return power(x, y/2)**2 % mod
-    else            : return power(x, y//2)**2 * x % mod
+# 組み込み関数pow(x,y,mod)のほうが早い！！！！！
+# def power(x, y):
+#     if   y == 0     : return 1
+#     elif y == 1     : return x % mod
+#     elif y % 2 == 0 : return power(x, y/2)**2 % mod
+#     else            : return power(x, y//2)**2 * x % mod
 
 
 # コンビネーション cmb(n,r,mod) nCr mod mod
-def cmb(n, r,mod):
-    if ( r<0 or r>n ):
-        return 0
-    r = min(r, n-r)
-    return g1[n] * g2[r] * g2[n-r] % mod
 mod = 10**9+7 #出力の制限
-N = 10**4
+n = 10**4 # nの最大値を指定
 g1 = [1, 1] # 元テーブル
 g2 = [1, 1] #逆元テーブル
 inverse = [0, 1] #逆元テーブル計算用テーブル
@@ -100,11 +92,39 @@ for i in range( 2, n + 1 ):
     g1.append( ( g1[-1] * i ) % mod )
     inverse.append( ( -inverse[mod % i] * (mod//i) ) % mod )
     g2.append( (g2[-1] * inverse[-1]) % mod )
+def cmb(n, r):
+    if ( r<0 or r>n ):
+        return 0
+    r = min(r, n-r)
+    return g1[n] * g2[r] * g2[n-r] % mod
 
-a = cmb(n,r,mod)
+
+from functools import reduce
+def comb(n, max_k, mod):
+    """
+    (n,k) := n個からk個選ぶ組み合わせ
+    k = 0~max_Kまでを計算して返す
+    """
+    res = [1] * (max_k + 1)
+    t = 1
+    for i in range(max_k + 1):
+        res[i] *= t
+        t *= n - i
+        t %= mod
+
+    n = reduce(lambda x, y: (x * y) % mod, range(1, max_k + 1), 1)
+    n = pow(n, -1, mod)
+
+    for i in reversed(range(max_k + 1)):
+        res[i] *= n
+        res[i] %= mod
+        n *= i
+        n %= mod
+    return res
+
 
 #nが非常に大きくrがちいさいときはこっち
-# div
+# 上にあるmul,divが必要
 def cmb(n,r):
     res=1
     for i in range(1,r+1):

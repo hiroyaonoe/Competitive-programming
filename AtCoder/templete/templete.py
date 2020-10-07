@@ -155,10 +155,11 @@ from collections import defaultdict
 
 # UnionFind
 par=[i for i in range(n)]
-ro=dict()
-
-for i in range(n):
-    ro[i]=1
+# roはグループの大きさ
+# ro=dict()
+#
+# for i in range(n):
+#     ro[i]=1
 i
 def root(i):
     if par[i]==i:
@@ -173,8 +174,8 @@ def unite(x,y):
     ry=root(y)
     if rx!=ry:
         par[rx]=ry
-        ro[ry]+=ro[rx]
-        ro[rx]=0
+        # ro[ry]+=ro[rx]
+        # ro[rx]=0
 
 
 # 複数のgcd,lcm

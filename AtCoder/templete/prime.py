@@ -1,3 +1,5 @@
+import math
+
 # 約数を列挙 Order(sqrt(n))
 def make_divisors(n):
     divisors = []
@@ -55,7 +57,8 @@ def make_prime_list(num):
     return [prime for prime in prime_list if prime != 0]
 
 
-# 素因数分解(make_prime_list,math.floorが必要)
+# 素因数分解(make_prime_list,mathが必要)
+# key:素因数 value:個数
 def prime_factorization(num):
     if num <= 1:
         return False

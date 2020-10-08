@@ -181,9 +181,9 @@ def unite(x,y):
 # 複数のgcd,lcm
 import math
 from functools import reduce
-def gcd(numbers):
+def gcd(numbers):# 最大公約数
     return reduce(math.gcd, numbers)
-def lcm_base(x, y):
+def lcm_base(x, y):# 最小公倍数
     return (x * y) // math.gcd(x, y)
 def lcm(numbers):
     return reduce(lcm_base, numbers, 1)

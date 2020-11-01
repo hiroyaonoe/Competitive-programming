@@ -1,23 +1,21 @@
 import os
-import sys
 
-dir=""
-while dir=="":
-    type=int(input("ABC:0 AGC:1 Other:2 ->"))
+url = input("The problem's URL is ").rstrip()
+parse = url.split("/")
+contest_name=parse[-1].upper()
 
-    if type==0:dir="ABC"
-    elif type==1:dir="AGC"
-    elif type==2:dir="others"
-    else:
-        print("Please input 0 or 1 or 2.")
+path=""
+default=("ABC","AGC")
+if contest_name[0:3] in default:
+    path+=contest_name[0:3]
+else:
+    path+="others"
 
-
-name=input("Contest name is ")
 num=int(input("The number of probrems is "))
 
+path+=os.sep+contest_name
 
-
-path=dir+"/"+name
+print(path,num)
 os.makedirs(path)
 os.chdir(path)
 for i in range(num):
@@ -25,4 +23,4 @@ for i in range(num):
     with open(filename,"w") as f:
         f.write("")
 
-
+print("Done")

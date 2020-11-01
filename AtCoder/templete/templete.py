@@ -187,3 +187,7 @@ def lcm_base(x, y):# 最小公倍数
     return (x * y) // math.gcd(x, y)
 def lcm(numbers):
     return reduce(lcm_base, numbers, 1)
+
+# 多次元配列のソート
+from operator import itemgetter
+list.sort(key=itemgetter(1))

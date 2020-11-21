@@ -5,7 +5,7 @@ parse = url.split("/")
 contest_name=parse[-1].upper()
 
 path=""
-default=("ABC","AGC")
+default=("ABC","AGC", "ARC")
 if contest_name[0:3] in default:
     path+=contest_name[0:3]
 else:

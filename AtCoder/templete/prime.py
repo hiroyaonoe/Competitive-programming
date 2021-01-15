@@ -13,7 +13,7 @@ def make_divisors(n):
     return divisors
 
 
-# 素数判定
+# 素数判定(math必要)
 def is_prime(num):
     if num < 2:
         return False
@@ -35,7 +35,7 @@ def is_prime(num):
     return True
 
 
-# num以下の素数列挙
+# num以下の素数列挙(math必要)
 def make_prime_list(num):
     if num < 2:
         return []

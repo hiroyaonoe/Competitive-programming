@@ -6,5 +6,3 @@ a.sort(reversed=True)
 ans=0
 
 
-
-

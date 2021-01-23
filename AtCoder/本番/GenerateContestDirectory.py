@@ -1,6 +1,6 @@
 import os
 
-url = input("The problem's URL is ").rstrip()
+url = input("The Contest URL is ").rstrip()
 parse = url.split("/")
 contest_name=parse[-1].upper()
 

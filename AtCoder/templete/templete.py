@@ -160,7 +160,7 @@ par=[i for i in range(n)]
 #
 # for i in range(n):
 #     ro[i]=1
-i
+
 def root(i):
     if par[i]==i:
         return i

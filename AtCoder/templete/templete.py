@@ -5,7 +5,7 @@ input=sys.stdin.readline
 .rstrip("\n")
 
 
-= list(map(int,input().split()))
+ = list(map(int,input().split()))
 
 # 切り捨て
 4 // 3

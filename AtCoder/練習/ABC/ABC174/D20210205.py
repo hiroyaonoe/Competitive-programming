@@ -6,7 +6,7 @@ c=list(input())
 w=0
 r=c.count("R")
 
-ans=1<<30
+ans=max(w,r)
 for i in c:
     if i=="R":
         r -= 1

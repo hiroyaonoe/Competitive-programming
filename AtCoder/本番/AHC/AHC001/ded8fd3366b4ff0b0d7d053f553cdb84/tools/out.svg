@@ -1,0 +1,21 @@
+<svg viewBox="-100 -100 10200 10200" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,0 l10000,0 l0,10000 l-10000,0 z" fill="white"/>
+<path d="M0,2 l2,0 l0,998 l-2,0 z" fill="#ff0000" stroke="black" stroke-width="5"/>
+<path d="M1,0 l999,0 l0,2 l-999,0 z" fill="#ff0000" stroke="black" stroke-width="5"/>
+<path d="M1000,1000 l9000,0 l0,9000 l-9000,0 z" fill="#ff0000" stroke="black" stroke-width="5"/>
+<path d="M-29,-28 l60,0 l0,60 l-60,0 z" fill="green"/>
+<path d="M1,2 l0,499" stroke="black" stroke-width="5"/>
+<path d="M-29,-29 l60,0 l0,60 l-60,0 z" fill="green"/>
+<path d="M1,1 l499.5,0" stroke="black" stroke-width="5"/>
+<path d="M970,970 l60,0 l0,60 l-60,0 z" fill="green"/>
+<path d="M1000,1000 l4500,4500" stroke="black" stroke-width="5"/>
+<text font-size="816.4965809277261" text-anchor="middle" x="1" y="786.7738033247041">
+0
+</text>
+<text font-size="816.4965809277261" text-anchor="middle" x="500.5" y="286.7738033247041">
+1
+</text>
+<text font-size="816.4965809277261" text-anchor="middle" x="5500" y="5785.773803324704">
+2
+</text>
+</svg>

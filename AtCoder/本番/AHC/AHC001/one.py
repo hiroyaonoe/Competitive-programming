@@ -56,8 +56,8 @@ def change(n, ret, xs, ys, rr, memo, start):
         state = 0
         count = -1
         while True:
-            if time.time() - start > 4.8:
-                return False
+            # if time.time() - start > 4.8:
+            #     return False
             count += 1
             s = (c - a) * (d - b)
             p = point(r, s)

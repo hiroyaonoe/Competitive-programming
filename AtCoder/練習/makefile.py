@@ -11,15 +11,15 @@ problem_name=input("The problem name is ").upper()
 
 if len(problem_name)==0:
     problem_name = parse[-1][-1].upper()
-if len(problem_name)!=1:
-    print("A problem name is one letter!")
-    exit()
+# if len(problem_name)!=1:
+#     print("A problem name is one letter!")
+#     exit()
 
 
 date=datetime.date.today()
 datestr=date.strftime("%Y%m%d")
 
-filename=problem_name+datestr+".py"
+filename=problem_name+"_"+datestr+".py"
 
 path=""
 default=("ABC","AGC","ARC")
